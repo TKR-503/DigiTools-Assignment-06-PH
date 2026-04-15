@@ -24,7 +24,7 @@ const Banner = () => {
                             Explore Products</p>
 
                         <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-                            <button className="btn btn-primary rounded-full bg-gradient-to-r from-[#4F39F6] to-[#8A5CF2]
+                            <button className="btn btn-primary rounded-full bg-linear-to-r from-[#4F39F6] to-[#8A5CF2]
                           py-3 px-6">Get Started</button>
                             <button className="btn rounded-full py-3 px-6 text-base bg-base-300 hover:bg-amber-300"><img src="./src/assets/play.png" alt="" />
                                 Watch Demo
@@ -38,6 +38,25 @@ const Banner = () => {
                 </div>
             </div>
 
+            <div className="bg-linear-to-r from-[#4F39F6] to-[#8A5CF2] p-24 mb-10" >
+
+                <div className="flex flex-col md:flex-row items-center justify-center gap-16 lg:gap-36">
+                    <div>
+                        <h1 className="text-white text-6xl font-extrabold">50K+</h1>
+                        <p className="text-white font-normal">Active Users</p>
+                   </div>
+                    <div>
+                        <h1 className="text-white text-6xl font-extrabold">200+</h1>
+                        <p className="text-white font-normal">Premium Tools</p>
+                   </div>
+                    <div>
+                        <h1 className="text-white text-6xl font-extrabold">4.9</h1>
+                        <p className="text-white font-normal">Rating</p>
+                   </div>
+
+                </div>
+
+             </div>
 
         </div>
     );

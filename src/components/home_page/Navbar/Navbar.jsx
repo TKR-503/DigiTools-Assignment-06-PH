@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className=" navbar">
       <div className="flex-1 gap-2">
         <div >
-           <span className="text-5xl font-extrabold bg-gradient-to-r from-[#4F39F6] to-[#8A5CF2] bg-clip-text text-transparent">DigiTools</span>
+           <span className="text-5xl font-extrabold bg-linear-to-r from-[#4F39F6] to-[#8A5CF2] bg-clip-text text-transparent">DigiTools</span>
         </div>
     </div>
       
@@ -33,7 +33,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
                <p className="hidden lg:block text-lg font-bold">Login</p>
                <div>
-                 <button className="btn btn-primary rounded-full bg-gradient-to-r from-[#4F39F6] to-[#8A5CF2]">Get Started</button>
+                 <button className="btn btn-primary rounded-full bg-linear-to-r from-[#4F39F6] to-[#8A5CF2]">Get Started</button>
                </div>
             </div>
           </div>
