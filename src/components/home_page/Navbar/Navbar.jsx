@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <div className="w-full container mx-auto gap-4"> 
+    <div className="w-full  gap-4 border-b border-gray-200"> 
       <div className=" navbar">
       <div className="flex-1 gap-2">
         <div >
@@ -11,13 +11,13 @@ const Navbar = () => {
     </div>
       
         <div className="flex items-center gap-4">
-          <div className="hidden lg:flex mr-44">  
+          <div className="hidden md:flex ml-32 lg:mr-40">  
              <ul className="flex items-center gap-8 ">
-                <li><a className="text-lg font-bold">Home</a></li>
-                <li><a className="text-lg font-bold">Tools</a></li>
-                <li><a className="text-lg font-bold">Blog</a></li>
-                <li><a className="text-lg font-bold">Contact</a></li>
+                <li><a className="text-lg font-bold">Products</a></li>
+                <li><a className="text-lg font-bold">Feature</a></li>
                 <li><a className="text-lg font-bold">Pricing</a></li>
+                <li><a className="text-lg font-bold">Testimonials</a></li>
+                <li><a className="text-lg font-bold">FAQ</a></li>
               </ul>
           </div>
           <div className="flex items-center gap-4">
@@ -31,7 +31,7 @@ const Navbar = () => {
             </div>
             
           <div className="flex items-center gap-4">
-               <p className="text-lg font-bold">Login</p>
+               <p className="hidden lg:block text-lg font-bold">Login</p>
                <div>
                  <button className="btn btn-primary rounded-full bg-gradient-to-r from-[#4F39F6] to-[#8A5CF2]">Get Started</button>
                </div>
