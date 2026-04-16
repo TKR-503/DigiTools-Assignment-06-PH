@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "name": "AI Writing Pro",
+    "description": "Generate high-quality content, blogs, and marketing copy in seconds with advanced AI.",
+    "price": 29,
+    "period": "monthly",
+    "tag": "Most Popular",
+    "tagType": "popular",
+    "features": [
+      "50+ writing templates",
+      "Unlimited AI generations",
+      "Grammar checker",
+      "Commercial use",
+      "Priority support"
+    ],
+    "image": "images/ai-writing-pro.png"
+  },
+  {
+    "id": 2,
+    "name": "Resume Builder Pro",
+    "description": "Create professional resumes that pass ATS filters and land you more interviews.",
+    "price": 15,
+    "period": "one-time",
+    "tag": "New",
+    "tagType": "new",
+    "features": [
+      "100+ templates",
+      "ATS optimization",
+      "Export to PDF",
+      "Custom branding",
+      "Monthly updates"
+    ],
+    "image": "images/resume-builder-pro.png"
+  },
+  {
+    "id": 3,
+    "name": "Design Asset Bundle",
+    "description": "Access a massive library of premium icons, illustrations, and UI components.",
+    "price": 49,
+    "period": "one-time",
+    "tag": "Best Seller",
+    "tagType": "bestseller",
+    "features": [
+      "10M+ assets",
+      "Figma & Sketch ready",
+      "Commercial license",
+      "Lifetime updates",
+      "Cloud sync"
+    ],
+    "image": "images/design-asset-bundle.png"
+  },
+  {
+    "id": 4,
+    "name": "Analytics Dashboard",
+    "description": "Track your product metrics, user behavior, and growth KPIs in real time.",
+    "price": 39,
+    "period": "monthly",
+    "tag": "Popular",
+    "tagType": "popular",
+    "features": [
+      "Real-time analytics",
+      "Custom reports",
+      "API access",
+      "Team collaboration",
+      "Data export"
+    ],
+    "image": "images/analytics-dashboard.png"
+  },
+  {
+    "id": 5,
+    "name": "Social Scheduler",
+    "description": "Plan, schedule, and auto-publish content across all major social platforms.",
+    "price": 19,
+    "period": "monthly",
+    "tag": "New",
+    "tagType": "new",
+    "features": [
+      "50+ automations",
+      "Scheduler included",
+      "Analytics built-in",
+      "Multi-platform",
+      "Team accounts"
+    ],
+    "image": "images/social-scheduler.png"
+  },
+  {
+    "id": 6,
+    "name": "SEO Toolkit",
+    "description": "Rank higher on Google with AI-powered keyword research and content optimization.",
+    "price": 34,
+    "period": "monthly",
+    "tag": "Featured",
+    "tagType": "featured",
+    "features": [
+      "Keyword research",
+      "On-page audit",
+      "Backlink tracker",
+      "Competitor analysis",
+      "Rank monitoring"
+    ],
+    "image": "images/seo-toolkit.png"
+  }
+]
