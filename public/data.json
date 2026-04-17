@@ -14,7 +14,7 @@
       "Commercial use",
       "Priority support"
     ],
-    "image": "images/ai-writing-pro.png"
+    "icon": "✍️"
   },
   {
     "id": 2,
@@ -31,7 +31,7 @@
       "Custom branding",
       "Monthly updates"
     ],
-    "image": "images/resume-builder-pro.png"
+    "icon": "📄"
   },
   {
     "id": 3,
@@ -48,7 +48,7 @@
       "Lifetime updates",
       "Cloud sync"
     ],
-    "image": "images/design-asset-bundle.png"
+    "icon": "🎨"
   },
   {
     "id": 4,
@@ -65,7 +65,7 @@
       "Team collaboration",
       "Data export"
     ],
-    "image": "images/analytics-dashboard.png"
+    "icon": "📊"
   },
   {
     "id": 5,
@@ -82,7 +82,7 @@
       "Multi-platform",
       "Team accounts"
     ],
-    "image": "images/social-scheduler.png"
+    "icon": "📅"
   },
   {
     "id": 6,
@@ -99,6 +99,6 @@
       "Competitor analysis",
       "Rank monitoring"
     ],
-    "image": "images/seo-toolkit.png"
+    "icon": "🔍"
   }
 ]
