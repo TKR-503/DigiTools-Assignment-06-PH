@@ -1,86 +1,95 @@
-import React, { use } from 'react';
-import { CheckCircle2, ShoppingCart } from 'lucide-react'
+import { Check, ShoppingCart } from 'lucide-react'
 
-
-const ProductCard = ({productsPromise,isInCart, onAddToCart}) => {
-
-    const data = use(productsPromise);
-
-    return (
- <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-  {Array.isArray(data) && data.map((product) => {
-
-    // Badge color based on tagType
-    const badgeStyle = {
-      popular: "badge-primary",
-      new: "badge-success",
-      bestseller: "badge-warning",
-      featured: "badge-secondary"
-    };
-
-    return (
-      <div
-        key={product.id}
-        className="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300 p-5 flex flex-col justify-between"
-      >
-        
-        {/* Top Section */}
-        <div>
-          {/* Icon + Tag */}
-          <div className="flex justify-between items-center">
-            <div className="text-3xl">{product.icon}</div>
-            <span className={`badge badge-sm ${badgeStyle[product.tagType]}`}>
-              {product.tag}
-            </span>
-          </div>
-
-          {/* Title */}
-          <h2 className="text-xl font-bold mt-4">
-            {product.name}
-          </h2>
-
-          {/* Description */}
-          <p className="text-sm text-gray-500 mt-2">
-            {product.description}
-          </p>
-
-          {/* Price */}
-          <div className="mt-4 text-2xl font-semibold">
-            ${product.price}
-            <span className="text-sm font-normal">
-              {product.period === "monthly" ? "/mo" : " one-time"}
-            </span>
-          </div>
-
-          {/* Features */}
-          <ul className="mt-4 space-y-2 text-sm">
-            {product.features.map((feature, index) => (
-              <li key={index} className="flex items-start gap-2">
-                <span className="text-green-500">✔</span>
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Button */}
-        <button
-        onClick={() => onAddToCart(product)}
-      
-        className={`w-full py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition-all duration-150 active:scale-95 ${
-          isInCart
-            ? 'bg-[#4F39F6]/20 text-[#a89cff] cursor-default border border-[#4F39F6]/30'
-            : 'bg-[#4F39F6] text-white hover:bg-indigo-500'
-        }`}
-      >
-       
-      </button>
-      </div>
-    );
-  })}
-</div>
-    );
+// ── Badge colours ──────────────────────────────────────
+const BADGE = {
+  popular:    { bg: 'bg-violet-100', text: 'text-violet-700' },
+  new:        { bg: 'bg-emerald-100', text: 'text-emerald-700' },
+  bestseller: { bg: 'bg-amber-100',   text: 'text-amber-700'   },
+  featured:   { bg: 'bg-pink-100',    text: 'text-pink-700'    },
+  enterprise: { bg: 'bg-sky-100',     text: 'text-sky-700'     },
 }
-         
 
-export default ProductCard;
+// ── Icon background tints ──────────────────────────────
+const ICON_BG = {
+  popular:    'bg-violet-50',
+  new:        'bg-sky-50',
+  bestseller: 'bg-orange-50',
+  featured:   'bg-pink-50',
+  enterprise: 'bg-sky-50',
+}
+
+const ProductCard = ({ product, isInCart, onAddToCart }) => {
+  const badge  = BADGE[product.tagType]  ?? BADGE.popular
+  const iconBg = ICON_BG[product.tagType] ?? 'bg-gray-50'
+
+  const periodLabel =
+    product.period === 'one-time' ? '/One-Time'
+    : product.period === 'yearly'  ? '/Yr'
+    : '/Mo'
+
+  return (
+    <div className="container mx-auto  bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-violet-200 transition-all duration-200 p-5 flex flex-col gap-3">
+
+      {/* ── Icon + Badge ─────────────────────────────── */}
+      <div className="flex items-start justify-between">
+        <div className={`w-11 h-11 rounded-xl ${iconBg} flex items-center justify-center text-[22px]`}>
+          {product.icon}
+        </div>
+        <span className={`text-[11px] font-bold px-3 py-1 rounded-full ${badge.bg} ${badge.text}`}>
+          {product.tag}
+        </span>
+      </div>
+
+      {/* ── Name & Description ────────────────────────── */}
+      <div>
+        <h2 className="text-2xl font-bold text-gray-900 leading-snug">
+          {product.name}
+        </h2>
+        <p className="text-[12px] text-gray-500 mt-1 leading-relaxed">
+          {product.description}
+        </p>
+      </div>
+
+      {/* ── Price ────────────────────────────────────── */}
+      <div className="flex items-baseline gap-1">
+        <span className="text-[28px] font-extrabold text-gray-900 leading-none">
+          ${product.price}
+        </span>
+        <span className="text-[12px] text-gray-400 font-medium">
+          {periodLabel}
+        </span>
+      </div>
+
+      {/* ── Features list ────────────────────────────── */}
+      <ul className="flex flex-col gap-[7px] flex-1">
+        {product.features?.map((feature, i) => (
+          <li key={i} className="flex items-center gap-2">
+            <Check size={13} className="text-violet-600 shrink-0" strokeWidth={2.5} />
+            <span className="text-[12px] text-gray-600">{feature}</span>
+          </li>
+        ))}
+      </ul>
+
+      {/* ── Buy Now button ────────────────────────────── */}
+      <button
+        onClick={() => !isInCart && onAddToCart(product)}
+        disabled={isInCart}
+        className={`
+          w-full py-[11px] rounded-full font-bold text-[13px]
+          flex items-center justify-center gap-2 mt-1
+          transition-all duration-150 active:scale-[0.98]
+          ${isInCart
+            ? 'bg-violet-100 text-violet-400 cursor-default'
+            : 'bg-violet-600 hover:bg-violet-700 text-white cursor-pointer'
+          }
+        `}
+      >
+        <ShoppingCart size={14} />
+        {isInCart ? 'Added to Cart' : 'Buy Now'}
+      </button>
+
+    </div>
+  )
+}
+
+export default ProductCard

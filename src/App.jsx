@@ -1,50 +1,41 @@
 import './App.css'
 import Navbar from './components/home_page/Navbar/Navbar'
 import Banner from './components/home_page/Banner/Banner'
-import ProductCard from './components/home_page/ProductsCard/ProductCard'
-import { Suspense } from 'react'
+import { useState, useEffect } from 'react'
 import MainSection from './components/home_page/MainSection/MainSection'
-import { ToastContainer } from 'react-toastify';
-
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const fetchProducts = async () => {
-
-  const res = await fetch('./data.json');
-  return res.json();
+  const res = await fetch('/data.json') // ✅ fixed path
+  return res.json()
 }
 
-
-
-
 function App() {
+  const [cartItems, setCartItems] = useState([])
+  const [products, setProducts] = useState([])
 
- const handleCartClick = () => {
+  const handleCartClick = () => {
     const el = document.getElementById('products')
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
-  const productsPromise = fetchProducts();
+
+  useEffect(() => {
+    fetchProducts().then(data => setProducts(data))
+  }, [])
+
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={2500}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        pauseOnHover
-        theme="dark"
-        toastStyle={{ background: '#1a2535', border: '1px solid #2a3545', color: '#fff' }}
+      <Navbar onCartClick={handleCartClick} />
+      <Banner />
+
+      <MainSection
+        products={products}
+        cartItems={cartItems}
+        setCartItems={setCartItems}
       />
-      <Navbar onCartClick={handleCartClick}></Navbar>
 
-      <Banner></Banner>
-      
-      <Suspense fallback={<span className="loading loading-spinner loading-lg"></span>}>
-
-        <ProductCard productsPromise={productsPromise}></ProductCard>
-      </Suspense>
-
-
+      <ToastContainer />
     </>
   )
 }
