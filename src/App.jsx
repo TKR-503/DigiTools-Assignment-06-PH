@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react'
 import MainSection from './components/home_page/MainSection/MainSection'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Steps_Section from './components/home_page/Steps_section/Steps_Section'
+import Pricing_Section from './components/home_page/Pricing_section/Pricing_Section'
 
 const fetchProducts = async () => {
   const res = await fetch('/data.json') // ✅ fixed path
@@ -34,8 +36,11 @@ function App() {
         cartItems={cartItems}
         setCartItems={setCartItems}
       />
+    <ToastContainer />
+   <Steps_Section />
+    <Pricing_Section />
 
-      <ToastContainer />
+
     </>
   )
 }
