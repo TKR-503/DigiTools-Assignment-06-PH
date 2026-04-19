@@ -34,32 +34,29 @@ const ProductCard = ({ product, isInCart, onAddToCart }) => {
       p-5 flex flex-col gap-3
     ">
 
-      {/* Row 1: icon box + badge */}
+      {/* icon box + badge */}
       <div className="flex items-start justify-between">
-    
         <div className={`${iconBg} w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0`}>
           {product.icon}
         </div>
-
-        {/* Tag badge — top-right corner */}
         <span className={`${badge.bg} ${badge.text} text-[11px] font-bold px-3 py-1 rounded-full`}>
           {product.tag}
         </span>
       </div>
 
-      {/* Row 2: name + description */}
+      {/* name + description */}
       <div>
-        <h3 className="text-gray-900 font-bold text-[15px] leading-snug">
+        <h3 className="text-gray-900 font-bold text-2xl leading-snug">
           {product.name}
         </h3>
-        <p className="text-gray-500 text-[12px] mt-1 leading-relaxed">
+        <p className="text-gray-700 text-[14px] mt-1 leading-relaxed">
           {product.description}
         </p>
       </div>
 
       {/* Row 3: price */}
       <div className="flex items-baseline gap-1">
-        <span className="text-gray-900 font-extrabold text-[28px] leading-none">
+        <span className="text-gray-900 font-extrabold text-3xl leading-none">
           ${product.price}
         </span>
         <span className="text-gray-400 text-[11px] font-medium">
@@ -67,7 +64,7 @@ const ProductCard = ({ product, isInCart, onAddToCart }) => {
         </span>
       </div>
 
-      {/*  Row 4: features */}
+      {/* Row 4: features */}
       <ul className="flex flex-col gap-1.5 flex-1">
         {product.features?.map((f) => (
           <li key={f} className="flex items-center gap-2">

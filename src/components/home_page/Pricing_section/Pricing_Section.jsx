@@ -58,7 +58,7 @@ const Feature = ({ text, highlight }) => (
     <Check
       size={14}
       strokeWidth={2.5}
-      className={`flex-shrink-0 ${highlight ? 'text-white' : 'text-violet-500'}`}
+      className={`shrink-0 ${highlight ? 'text-white' : 'text-violet-500'}`}
     />
     <span className={`text-[12.5px] ${highlight ? 'text-white/90' : 'text-gray-600'}`}>
       {text}
@@ -128,7 +128,7 @@ const Pricing_Section = () => {
                 </span>
               </div>
 
-              {/* Divider */}
+          
               <div className={`h-px w-full ${plan.highlight ? 'bg-white/20' : 'bg-gray-100'}`} />
 
               {/* Features list */}

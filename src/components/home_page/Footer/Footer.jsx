@@ -12,7 +12,6 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#13131a] border-t border-[#1e1e2e] pt-14 pb-8">
 
-      {/* FULL WIDTH CONTAINER */}
       <div className="w-full px-6 md:px-10 lg:px-20">
 
         {/* Top grid */}
@@ -34,6 +33,7 @@ export default function Footer() {
           </div>
 
           {/* Dynamic Links */}
+          
           {Object.entries(FOOTER_LINKS).map(([heading, links]) => (
             <div key={heading}>
               <h4 className="text-white font-semibold text-sm mb-5">{heading}</h4>

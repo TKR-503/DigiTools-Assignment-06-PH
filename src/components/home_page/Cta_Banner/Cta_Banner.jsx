@@ -5,7 +5,7 @@ export default function Cta_Banner() {
     <section className="border-t border-[#2a2a40]">
       <div className="relative overflow-hidden bg-linear-to-br from-[#5b21b6] via-[#7c3aed] to-[#8b5cf6] px-8 py-20 md:py-24 text-center">
 
-        {/* Ambient glow blobs */}
+      
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-160 bg-[#a78bfa]/20 rounded-full blur-[110px]" />
           <div className="absolute -top-16 -left-16 w-70 bg-[#c4b5fd]/10 rounded-full blur-[80px]" />

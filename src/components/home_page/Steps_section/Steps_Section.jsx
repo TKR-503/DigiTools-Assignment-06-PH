@@ -82,7 +82,7 @@ const Steps_Section = () => {
               </h3>
 
               {/* Description */}
-              <p className="text-gray-400 text-[12.5px] leading-relaxed max-w-[180px]">
+              <p className="text-gray-400 text-[12.5px] leading-relaxed max-w-45">
                 {desc}
               </p>
             </div>

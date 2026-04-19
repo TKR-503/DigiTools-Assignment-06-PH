@@ -11,7 +11,7 @@ import CtaBanner from './components/home_page/Cta_Banner/Cta_Banner'
 import Footer from './components/home_page/Footer/Footer'
 
 const fetchProducts = async () => {
-  const res = await fetch('/data.json') // ✅ fixed path
+  const res = await fetch('/data.json')
   return res.json()
 }
 
@@ -30,7 +30,8 @@ function App() {
 
   return (
     <>
-      <Navbar onCartClick={handleCartClick} />
+    
+      <Navbar cartItems={cartItems} onCartClick={handleCartClick} />
       <Banner />
 
       <MainSection
@@ -38,12 +39,11 @@ function App() {
         cartItems={cartItems}
         setCartItems={setCartItems}
       />
-    <ToastContainer />
-   <Steps_Section />
-    <Pricing_Section />
-    <CtaBanner />
-    <Footer />
-   
+      <ToastContainer />
+      <Steps_Section />
+      <Pricing_Section />
+      <CtaBanner />
+      <Footer />
     </>
   )
 }

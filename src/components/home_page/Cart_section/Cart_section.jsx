@@ -3,7 +3,7 @@ import { ShoppingBag } from 'lucide-react'
 const CartSection = ({ cartItems, onRemove, onCheckout }) => {
   const total = cartItems.reduce((sum, item) => sum + item.price, 0)
 
-  /* Empty state  */
+  /* when cart is empty */
   if (cartItems.length === 0) {
     return (
       <div className="max-w-2xl mx-auto">
@@ -25,17 +25,17 @@ const CartSection = ({ cartItems, onRemove, onCheckout }) => {
 
         {/* my Cart header */}
         <div className="px-6 pt-5 pb-3">
-          <h3 className="text-gray-900 font-bold text-[15px]">Your Cart</h3>
+          <h3 className="text-gray-900 font-bold text-2xl">Your Cart</h3>
         </div>
 
-        {/* Cart item rows */}
+  
         <div className="flex flex-col gap-2 px-4 pb-4">
           {cartItems.map((item) => (
             <div
               key={item.id}
               className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3"
             >
-              {/* Product icon */}
+           
               <div className="w-9 h-9 rounded-lg bg-white border border-gray-100 flex items-center justify-center text-lg shrink-0">
                 {item.icon}
               </div>
@@ -45,10 +45,10 @@ const CartSection = ({ cartItems, onRemove, onCheckout }) => {
                 <p className="text-gray-900 font-semibold text-[13px] leading-tight truncate">
                   {item.name}
                 </p>
-                <p className="text-gray-500 text-[12px] mt-0.5">${item.price}</p>
+                <p className="text-gray-700 text-[12px] mt-0.5">${item.price}</p>
               </div>
 
-              {/* Remove link — red text, no background */}
+              {/* Remove button */}
               <button
                 onClick={() => onRemove(item)}
                 className="text-red-500 hover:text-red-600 text-[13px] font-semibold shrink-0 transition-colors"
@@ -59,7 +59,6 @@ const CartSection = ({ cartItems, onRemove, onCheckout }) => {
           ))}
         </div>
 
-        {/* Divider */}
         <div className="h-px bg-gray-100 mx-4" />
 
         {/* Total row */}
@@ -68,7 +67,7 @@ const CartSection = ({ cartItems, onRemove, onCheckout }) => {
           <span className="text-gray-900 font-extrabold text-[22px]">${total}</span>
         </div>
 
-        {/* Proceed to Checkout button */}
+        {/* Checkout button */}
         <div className="px-4 pb-5">
           <button
             onClick={onCheckout}
