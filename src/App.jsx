@@ -7,6 +7,8 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Steps_Section from './components/home_page/Steps_section/Steps_Section'
 import Pricing_Section from './components/home_page/Pricing_section/Pricing_Section'
+import CtaBanner from './components/home_page/Cta_Banner/Cta_Banner'
+import Footer from './components/home_page/Footer/Footer'
 
 const fetchProducts = async () => {
   const res = await fetch('/data.json') // ✅ fixed path
@@ -39,8 +41,8 @@ function App() {
     <ToastContainer />
    <Steps_Section />
     <Pricing_Section />
-
-
+    <CtaBanner />
+   
     </>
   )
 }
