@@ -37,7 +37,7 @@ const ProductCard = ({ product, isInCart, onAddToCart }) => {
       {/* Row 1: icon box + badge */}
       <div className="flex items-start justify-between">
     
-        <div className={`${iconBg} w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0`}>
+        <div className={`${iconBg} w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0`}>
           {product.icon}
         </div>
 
@@ -68,10 +68,10 @@ const ProductCard = ({ product, isInCart, onAddToCart }) => {
       </div>
 
       {/*  Row 4: features */}
-      <ul className="flex flex-col gap-[6px] flex-1">
+      <ul className="flex flex-col gap-1.5 flex-1">
         {product.features?.map((f) => (
           <li key={f} className="flex items-center gap-2">
-            <Check size={13} className="text-violet-500 flex-shrink-0" strokeWidth={2.5} />
+            <Check size={13} className="text-violet-500 shrink-0" strokeWidth={2.5} />
             <span className="text-gray-600 text-[12px]">{f}</span>
           </li>
         ))}
@@ -82,7 +82,7 @@ const ProductCard = ({ product, isInCart, onAddToCart }) => {
         onClick={() => !isInCart && onAddToCart(product)}
         disabled={isInCart}
         className={`
-          w-full py-[11px] rounded-full font-bold text-[13px]
+          w-full py-2.75 rounded-full font-bold text-[13px]
           flex items-center justify-center gap-2 mt-1
           transition-all duration-150 active:scale-95
           ${isInCart

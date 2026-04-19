@@ -36,7 +36,7 @@ const CartSection = ({ cartItems, onRemove, onCheckout }) => {
               className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3"
             >
               {/* Product icon */}
-              <div className="w-9 h-9 rounded-lg bg-white border border-gray-100 flex items-center justify-center text-lg flex-shrink-0">
+              <div className="w-9 h-9 rounded-lg bg-white border border-gray-100 flex items-center justify-center text-lg shrink-0">
                 {item.icon}
               </div>
 
@@ -51,7 +51,7 @@ const CartSection = ({ cartItems, onRemove, onCheckout }) => {
               {/* Remove link — red text, no background */}
               <button
                 onClick={() => onRemove(item)}
-                className="text-red-500 hover:text-red-600 text-[13px] font-semibold flex-shrink-0 transition-colors"
+                className="text-red-500 hover:text-red-600 text-[13px] font-semibold shrink-0 transition-colors"
               >
                 Remove
               </button>

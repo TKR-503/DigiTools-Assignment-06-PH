@@ -42,6 +42,7 @@ function App() {
    <Steps_Section />
     <Pricing_Section />
     <CtaBanner />
+    <Footer />
    
     </>
   )
